@@ -1,0 +1,100 @@
+.captcha_img {
+    cursor:pointer;
+    height:40px;
+    width:173px;
+}
+
+#microservices {
+    display:block;
+}
+
+#flow_one {
+    display:none;
+}
+
+#flow_two {
+    display:none;
+}
+
+#flow_three {
+    display:none;
+}
+
+.noshow_component {
+    display: none;
+}
+
+.alert_info {
+    display: inline;
+    width: 200px;
+    height:10px;
+}
+
+#order_rebook_panel {
+    /*margin-left:50px;*/
+    /*top:50px;*/
+    /*width:1000px;*/
+    /*display: none;*/
+    /*border: 1px solid #ddd;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 1px 1px 10px black;*/
+    /*padding: 30px;*/
+    /*font-size: 12px;*/
+    /*position: fixed;*/
+    /*text-align: center;*/
+    /*background: #fff;*/
+    /*z-index: 100;*/
+}
+
+#ticket_cancel_panel {
+    margin-left:100px;
+    top:100px;
+    width:800px;
+    display: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px black;
+    padding: 30px;
+    font-size: 12px;
+    position: fixed;
+    text-align: center;
+    background: #fff;
+    z-index: 100;
+}
+
+#ticket_rebook_pay_panel {
+     /*margin-left:100px;*/
+     /*top:100px;*/
+     /*width:800px;*/
+     /*display: none;*/
+     /*border: 1px solid #ddd;*/
+     /*border-radius: 5px;*/
+     /*box-shadow: 1px 1px 10px black;*/
+     /*padding: 30px;*/
+     /*font-size: 12px;*/
+     /*position: fixed;*/
+     /*text-align: center;*/
+     /*background: #fff;*/
+     /*z-index: 200;*/
+ }
+
+#preserve_pay_panel {
+    /*margin-left:100px;*/
+    /*top:100px;*/
+    /*width:800px;*/
+    /*display: none;*/
+    /*border: 1px solid #ddd;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 1px 1px 10px black;*/
+    /*padding: 30px;*/
+    /*font-size: 12px;*/
+    /*position: fixed;*/
+    /*text-align: center;*/
+    /*background: #fff;*/
+    /*z-index: 100;*/
+}
+
+#price_result_talbe {
+    /*height:200px;*/
+    overflow: scroll;
+}

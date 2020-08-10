@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://10.141.212.140:31112
+functions:
+  init-contacts-mongo:
+    lang: java8
+    handler: ./init-contacts-mongo
+    image: 286071421/init-contacts-mongo:latest
+

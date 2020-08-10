@@ -1,0 +1,15 @@
+.myspan{
+    font-size: 20px;
+    font-weight: bolder;
+    color : #aaa;
+}
+
+.mycaption{
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.mytd{
+    width:20%;
+}

@@ -1,0 +1,354 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv001
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/station
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv002
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/auth
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv003
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/config
+      server: 10.141.212.135
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv004
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/contacts
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv005
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/insidePayment
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv006
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/order
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv007
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/payment
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv008
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/price
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv009
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/route
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv010
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/security
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv011
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/train
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv012
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/travel
+      server: 10.141.212.135
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv013
+spec:
+    storageClassName: nfs
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /var/nfs/data/user
+      server: 10.141.212.135
+
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-station-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-auth-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-config-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-contacts-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-inside-payment-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-order-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-payment-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-price-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-route-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-security-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-train-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-travel-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ts-user-mongo-pvc
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 5Gi

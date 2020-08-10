@@ -1,0 +1,100 @@
+#re_book_dialog{
+    display: block;
+    white-space:nowrap;
+    overflow:auto;
+}
+#re_book_dialog ul li {
+    display: inline-block;
+    margin-right:10px;
+}
+
+#re_booking_list_table thead tr th {
+    font-size: 12px;
+}
+#re_booking_list_table tbody tr td {
+    font-size: 14px;
+    text-align:left;
+}
+
+#search_panel {
+    display: block;
+    white-space:nowrap;
+    overflow:auto;
+}
+#search_panel ul {
+    margin-left:20px;
+}
+#search_panel ul li{
+    font-size: 12px;
+    display: inline-block;
+    margin-right:10px;
+}
+.ad_search_panel{
+    font-size: 12px;
+}
+
+.collect_ticket{
+    font-size: 12px;
+}
+.ticket_enterstation{
+    font-size: 12px;
+}
+.change_cancel_table{
+    padding-right:10px;
+}
+#tickets_booking_list_table thead tr th {
+    font-size: 12px;
+}
+#tickets_booking_list_table tbody tr td {
+    font-size: 14px;
+    text-align:left;
+}
+
+#contacts_booking_list_table thead tr th {
+    font-size: 12px;
+}
+
+#contacts_booking_list_table  tbody tr td {
+    font-size: 14px;
+    text-align:left;
+}
+
+.control_label_ssurance {
+    font-size: 14px;
+}
+.need_food {
+    font-size: 14px;
+}
+.consign_ornot {
+    font-size: 14px;
+}
+.ticket-from-confirm .am-u-sm-5{
+    font-size: 12px;
+    text-align: center;
+    height: 26px;
+}
+.ticket-from-confirm .am-u-sm-7{
+    font-size: 12px;
+    text-align: center;
+    height: 26px;
+}
+.pay_from_fontsize {
+    font-size: 11px;
+}
+
+#my-svg {
+    position: fixed;
+    top: 200px;
+    left: 700px;
+    right: 700px;
+    width: 100px;
+    height: 100px;
+}
+#my-svg-change-order{
+    position: fixed;
+    top: 200px;
+    left: 700px;
+    right: 700px;
+    width: 100px;
+    height: 100px;
+}

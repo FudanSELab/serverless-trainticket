@@ -1,0 +1,9 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://10.141.212.140:31112
+functions:
+  check-security-about-order:
+    lang: java8
+    handler: ./check-security-about-order
+    image: 286071421/check-security-about-order:latest

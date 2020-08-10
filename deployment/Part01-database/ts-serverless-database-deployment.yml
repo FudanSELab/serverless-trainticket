@@ -1,0 +1,595 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-station-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-station-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-station-mongo
+    spec:
+      containers:
+      - name: ts-serverless-station-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: station-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: station-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-station-mongo-pvc
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-station-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-station-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-travel-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-travel-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-travel-mongo
+    spec:
+      containers:
+      - name: ts-serverless-travel-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: travel-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: travel-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-travel-mongo-pvc
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-travel-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-travel-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-route-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-route-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-route-mongo
+    spec:
+      containers:
+      - name: ts-serverless-route-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: route-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: route-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-route-mongo-pvc
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-route-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-route-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-train-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-train-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-train-mongo
+    spec:
+      containers:
+      - name: ts-serverless-train-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: train-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: train-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-train-mongo-pvc
+            
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-train-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-train-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-price-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-price-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-price-mongo
+    spec:
+      containers:
+      - name: ts-serverless-price-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: price-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: price-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-price-mongo-pvc
+            
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-price-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-price-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-order-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-order-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-order-mongo
+    spec:
+      containers:
+      - name: ts-serverless-order-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: order-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: order-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-order-mongo-pvc
+            
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-order-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-order-mongo
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-config-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-config-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-config-mongo
+    spec:
+      containers:
+      - name: ts-serverless-config-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: config-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: config-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-config-mongo-pvc
+           
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-config-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-config-mongo
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-security-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-security-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-security-mongo
+    spec:
+      containers:
+      - name: ts-serverless-security-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: security-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: security-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-security-mongo-pvc
+           
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-security-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-security-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-contacts-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-contacts-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-contacts-mongo
+    spec:
+      containers:
+      - name: ts-serverless-contacts-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: contacts-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: contacts-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-contacts-mongo-pvc
+            
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-contacts-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-contacts-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-inside-payment-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-inside-payment-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-inside-payment-mongo
+    spec:
+      containers:
+      - name: ts-serverless-inside-payment-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: inside-payment-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: inside-payment-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-inside-payment-mongo-pvc
+            
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-inside-payment-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-inside-payment-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-payment-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-payment-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-payment-mongo
+    spec:
+      containers:
+      - name: ts-serverless-payment-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: payment-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: payment-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-payment-mongo-pvc
+            
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-payment-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-payment-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-user-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-user-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-user-mongo
+    spec:
+      containers:
+      - name: ts-serverless-user-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: user-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: user-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-user-mongo-pvc
+          
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-user-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-user-mongo
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-serverless-auth-mongo
+spec:
+  selector:
+    matchLabels:
+      app: ts-serverless-auth-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-serverless-auth-mongo
+    spec:
+      containers:
+      - name: ts-serverless-auth-mongo
+        image: mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+          - name: auth-mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: auth-mongo-data
+          persistentVolumeClaim:
+            claimName: ts-auth-mongo-pvc
+          
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-serverless-auth-mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+   app: ts-serverless-auth-mongo

@@ -1,0 +1,9 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://???136:31112
+functions:
+  get-route-by-routeid:
+    lang: java8
+    handler: ./get-route-by-routeid
+    image: zhangsan/get-route-by-routeid:latest
