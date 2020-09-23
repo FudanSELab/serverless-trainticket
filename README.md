@@ -96,20 +96,3 @@ chmod u+x part03_Frontend.sh
 ### 9. 访问 Serverless TrainTicket 主页 http://[Node-IP]:32677
 
 
-
-##函数与调用关系图
-
-下图展示了系统中所有的函数服务及其调用关系。
-
-![Untitled Diagram(36)](/Users/akasakaisami/Downloads/Untitled Diagram(36).png)
-
-
-
-![Untitled Diagram(39)](/Users/akasakaisami/Downloads/Untitled Diagram(39).png)
-
-
-
-<img src="/Users/akasakaisami/Downloads/Untitled Diagram(44).png" alt="Untitled Diagram(44) " style="zoom:30%;" />
-
-
-
