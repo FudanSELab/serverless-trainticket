@@ -1,7 +1,7 @@
 echo "Part03 Front Deployment"
 
 cd deployment/Part03-frontend/
-kubectl create -f ts-serverless-frontend-deployment.yml
+kubectl create -f ts-serverless-frontend-deployment.yml --namespace=sltt
 
 cd ..
 cd ..

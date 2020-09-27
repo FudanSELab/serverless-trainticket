@@ -16,10 +16,10 @@ mkdir /var/nfs/data/user
  
 
 cd deployment/Part01-database/
-kubectl apply -f ts-serverless-database-deployment.yml
+kubectl apply -f ts-serverless-database-deployment.yml --namespace=sltt-db
 
 sed -i s/10.141.212.140/$MASTER_ID/g ts-serverless-persistent-deployment.yml
-kubectl apply -f ts-serverless-persistent-deployment.yml
+kubectl apply -f ts-serverless-persistent-deployment.yml --namespace=sltt-db
 cd ..
 cd ..
 
