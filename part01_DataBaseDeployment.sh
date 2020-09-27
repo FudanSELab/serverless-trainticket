@@ -23,7 +23,7 @@ DOCKER_USERNAME=<docker_username>
 cd deployment/Part01-database/
 kubectl apply -f ts-serverless-database-deployment.yml --namespace=sltt-db
 
-sed -i s/10.141.212.140/$MASTER_ID/g ts-serverless-persistent-deployment.yml
+sed -i s/10.141.212.135/$MASTER_ID/ ts-serverless-persistent-deployment.yml
 kubectl apply -f ts-serverless-persistent-deployment.yml --namespace=sltt-db
 cd ..
 cd ..
