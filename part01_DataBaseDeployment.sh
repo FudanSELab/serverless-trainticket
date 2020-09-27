@@ -14,11 +14,8 @@ mkdir /var/nfs/data/train
 mkdir /var/nfs/data/travel
 mkdir /var/nfs/data/user
  
-MASTER_ID=<master_ip_address>
-NODE01_ID=<node01_ip_address>
-NODE02_ID=<node02_ip_address>
-NODE03_ID=<node03_ip_address>
-DOCKER_USERNAME=<docker_username>
+MASTER_ID=master_ip_address
+DOCKER_USERNAME=<docker_username
 
 cd deployment/Part01-database/
 kubectl apply -f ts-serverless-database-deployment.yml --namespace=sltt-db
