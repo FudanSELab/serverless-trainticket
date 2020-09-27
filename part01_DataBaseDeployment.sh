@@ -15,13 +15,13 @@ mkdir /var/nfs/data/travel
 mkdir /var/nfs/data/user
  
 MASTER_ID=master_ip_address
-DOCKER_USERNAME=<docker_username
+DOCKER_USERNAME=docker_username
 
 cd deployment/Part01-database/
-kubectl apply -f ts-serverless-database-deployment.yml --namespace=sltt-db
+kubectl apply -f ts-serverless-database-deployment.yml
 
 sed -i s/10.141.212.135/$MASTER_ID/ ts-serverless-persistent-deployment.yml
-kubectl apply -f ts-serverless-persistent-deployment.yml --namespace=sltt-db
+kubectl apply -f ts-serverless-persistent-deployment.yml
 cd ..
 cd ..
 

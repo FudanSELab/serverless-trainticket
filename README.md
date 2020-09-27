@@ -65,7 +65,7 @@ chmod u+x part01_DataBaseDeployment.sh
 ./part01_DataBaseDeployment.sh
 ```
 
-运行 `kubectl get pods -n sltt-db`和`kubectl get pods -n openfaas-fn` 等待所有数据库初始化函数 Pods 都是 Ready 状态，再运行以下命令
+运行 `kubectl get pods`和`kubectl get pods -n openfaas-fn` 等待所有数据库初始化函数 Pods 都是 Ready 状态，再运行以下命令
 
 ```shell
 # 数据内容初始化
@@ -100,7 +100,7 @@ chmod u+x part03_Frontend.sh
 ./part03_Frontend.sh
 ```
 
-### 8. 运行 `kubectl get pods` 等待所有 Pods 都是 Ready 状态
+### 8. 运行 `kubectl get pods --all-namespaces` 等待所有 Pods 都是 Ready 状态
 
 ### 9. 访问 Serverless TrainTicket 主页 http://[Node-IP]:32677
 
