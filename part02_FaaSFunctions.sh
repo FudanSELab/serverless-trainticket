@@ -3,6 +3,12 @@ echo "Part02 FaaS Backend Deployment"
 cd src/backend/FaaS/
 cd Part01/
 
+MASTER_ID=<master_ip_address>
+NODE01_ID=<node01_ip_address>
+NODE02_ID=<node02_ip_address>
+NODE03_ID=<node03_ip_address>
+DOCKER_USERNAME=<docker_username>
+
 echo "Part1 function deployment start"
 
 cd getLeftTicketOfInterval/

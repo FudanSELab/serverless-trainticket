@@ -50,6 +50,7 @@ master节点的shell中输入
 MASTER_ID=<master_ip_address>
 NODE01_ID=<node01_ip_address>
 NODE02_ID=<node02_ip_address>
+NODE03_ID=<node03_ip_address>
 DOCKER_USERNAME=<docker_username>
 ```
 
@@ -57,14 +58,22 @@ DOCKER_USERNAME=<docker_username>
 
 ```shell
 # 部署数据库
+sed -i s/<master_ip_address>/$MASTER_ID/ part01_DataBaseDeployment.sh
+sed -i s/<node01_ip_address>/$NODE01_ID/ part01_DataBaseDeployment.sh
+sed -i s/<node02_ip_address>/$NODE02_ID/ part01_DataBaseDeployment.sh
+sed -i s/<node03_ip_address>/$NODE03_ID/ part01_DataBaseDeployment.sh
+sed -i s/<docker_username>/$DOCKER_USERNAME/ part01_DataBaseDeployment.sh
+
 chmod u+x part01_DataBaseDeployment.sh
 ./part01_DataBaseDeployment.sh
 ```
 
-运行 `kubectl get pods -n openfaas-fn` 等待所有数据库初始化函数 Pods 都是 Ready 状态，再运行以下命令
+运行 `kubectl get pods -n sltt-db`和`kubectl get pods -n openfaas-fn` 等待所有数据库初始化函数 Pods 都是 Ready 状态，再运行以下命令
 
 ```shell
 # 数据内容初始化
+sed -i s/10.141.212.140/$MASTER_ID/ part01_DataInitiation.sh
+
 chmod u+x part01_DataInitiation.sh
 ./part01_DataInitiation.sh
 ```
@@ -79,6 +88,12 @@ chmod u+x part02_BaaSServices.sh
 
 ```shell
 # FaaS函数部署
+sed -i s/<master_ip_address>/$MASTER_ID/ part02_FaaSFunctions.sh
+sed -i s/<node01_ip_address>/$NODE01_ID/ part02_FaaSFunctions.sh
+sed -i s/<node02_ip_address>/$NODE02_ID/ part02_FaaSFunctions.sh
+sed -i s/<node03_ip_address>/$NODE03_ID/ part02_FaaSFunctions.sh
+sed -i s/<docker_username>/$DOCKER_USERNAME/ part02_FaaSFunctions.sh
+
 chmod u+x part02_FaaSFunctions.sh
 ./part02_FaaSFunctions.sh
 ```

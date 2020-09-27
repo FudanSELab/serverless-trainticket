@@ -1,5 +1,6 @@
 echo "Part01 Data Initiation"
 
+
 echo "" | faas-cli invoke init-auth-mongo --gateway http://10.141.212.140:31112
 echo "" | faas-cli invoke init-config-mongo --gateway http://10.141.212.140:31112
 echo "" | faas-cli invoke init-contacts-mongo --gateway http://10.141.212.140:31112
