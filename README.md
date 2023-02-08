@@ -38,29 +38,30 @@ docker login -u <username> -p <password>
 ### 3. 克隆项目仓库
 
 ```sh
-git clone https://gitee.com/akasakaisami/train-ticket-serverless.git
-cd Serverless_trainticket/
+git clone https://github.com/GitHubDiom/serverless-trainticket
 ```
 
-### 4. 配置部署需要的全局变量
+### 4. 手动下载OpenFaaS的Java8模板
 
-master节点的shell中输入
 
 ```shell
-MASTER_ID=<master_ip_address>
-NODE01_ID=<node01_ip_address>
-NODE02_ID=<node02_ip_address>
-NODE03_ID=<node03_ip_address>
-DOCKER_USERNAME=<docker_username>
+cd serverless_trainticket/
+
+# 新版OpenFaaS取消了对Java8的模板支持，这里手动下载旧版的Java8模板
+wget https://github.com/openfaas/templates/archive/refs/tags/1.9.0.tar.gz
+tar -zxvf 1.9.0.tar.gz
+mv templates-1.9.0/template ./
+rm -rf *1.9.0*
 ```
 
 ### 5. 执行数据库自动部署脚本文件
+```shell
+export MASTER_IP=<master_ip_addr> # master节点的IP地址
+export DOCKER_USERNAME=<docker_username> # dockerhub的用户名
+```
 
 ```shell
 # 部署数据库
-sed -i s/master_ip_address/$MASTER_ID/ part01_DataBaseDeployment.sh
-sed -i s/docker_username/$DOCKER_USERNAME/ part01_DataBaseDeployment.sh
-
 chmod u+x part01_DataBaseDeployment.sh
 ./part01_DataBaseDeployment.sh
 ```
@@ -69,8 +70,6 @@ chmod u+x part01_DataBaseDeployment.sh
 
 ```shell
 # 数据内容初始化
-sed -i s/10.141.212.140/$MASTER_ID/ part01_DataInitiation.sh
-
 chmod u+x part01_DataInitiation.sh
 ./part01_DataInitiation.sh
 ```
@@ -85,9 +84,6 @@ chmod u+x part02_BaaSServices.sh
 
 ```shell
 # FaaS函数部署
-sed -i s/master_ip_address/$MASTER_ID/ part02_FaaSFunctions.sh
-sed -i s/docker_username/$DOCKER_USERNAME/ part02_FaaSFunctions.sh
-
 chmod u+x part02_FaaSFunctions.sh
 ./part02_FaaSFunctions.sh
 ```
