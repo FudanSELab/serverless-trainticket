@@ -51,6 +51,7 @@ cd ..
 echo "FINISHED 7/13"
 
 cd getTrainTypeByTrainTypeId/
+cp -r $PROJECT_DIR/template ./
 faas-cli up -f get-traintype-by-traintypeid.yml
 cd ..
 echo "FINISHED 8/13"
