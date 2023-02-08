@@ -27,6 +27,9 @@ public class JsonUtils {
             ObjectMapper objectMapper = new ObjectMapper();
             result = objectMapper.writeValueAsString(obj);
         } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("e.getMessage="+e.getMessage());
+            System.out.println("e="+e);
         }
         return result;
     }
@@ -58,6 +61,9 @@ public class JsonUtils {
             ObjectMapper objectMapper = new ObjectMapper();
             result = objectMapper.readValue(json, cls);
         } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("e.getMessage="+e.getMessage());
+            System.out.println("e="+e);
         }
 
         return result;
