@@ -1,9 +1,9 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://10.141.212.140:31112
+  gateway: http://${MASTER_IP}:31112
 functions:
   get-order-by-id:
     lang: java8
     handler: ./get-order-by-id
-    image: 286071421/get-order-by-id:latest
+    image: ${DOCKER_USERNAME}/get-order-by-id:latest

@@ -1,9 +1,9 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://10.141.212.140:31112
+  gateway: http://${MASTER_IP}:31112
 functions:
   query-already-sold-orders:
     lang: java8
     handler: ./query-already-sold-orders
-    image: 286071421/query-already-sold-orders:latest
+    image: ${DOCKER_USERNAME}/query-already-sold-orders:latest

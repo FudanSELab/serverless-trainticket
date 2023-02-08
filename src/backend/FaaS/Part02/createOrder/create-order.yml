@@ -1,9 +1,9 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://10.141.212.140:31112
+  gateway: http://${MASTER_IP}:31112
 functions:
   create-order:
     lang: java8
     handler: ./create-order
-    image: 286071421/create-order:latest
+    image: ${DOCKER_USERNAME}/create-order:latest

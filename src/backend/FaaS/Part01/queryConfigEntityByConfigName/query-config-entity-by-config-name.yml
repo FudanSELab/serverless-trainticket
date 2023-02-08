@@ -1,9 +1,9 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://10.141.212.140:31112
+  gateway: http://${MASTER_IP}:31112
 functions:
   query-config-entity-by-config-name:
     lang: java8
     handler: ./query-config-entity-by-config-name
-    image: 286071421/query-config-entity-by-config-name:latest
+    image: ${DOCKER_USERNAME}/query-config-entity-by-config-name:latest
