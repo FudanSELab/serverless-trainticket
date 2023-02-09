@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-station-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -60,7 +60,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-travel-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -105,7 +105,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-route-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -150,7 +150,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-train-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -196,7 +196,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-price-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -242,7 +242,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-order-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -289,7 +289,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-config-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -336,7 +336,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-security-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -382,7 +382,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-contacts-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -428,7 +428,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-inside-payment-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -474,7 +474,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-payment-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -520,7 +520,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-user-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017
@@ -566,7 +566,7 @@ spec:
     spec:
       containers:
       - name: ts-serverless-auth-mongo
-        image: mongo
+        image: mongo:4.4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 27017

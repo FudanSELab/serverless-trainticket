@@ -1,9 +1,9 @@
 version: 1.0
 provider:
   name: openfaas
-  gateway: http://10.141.212.140:31112
+  gateway: http://${MASTER_IP}:31112
 functions:
   dipatch-seat:
     lang: java8
     handler: ./dipatch-seat
-    image: 286071421/dipatch-seat:latest
+    image: ${DOCKER_USERNAME}/dipatch-seat:latest

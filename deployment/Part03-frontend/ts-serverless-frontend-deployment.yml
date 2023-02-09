@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: ts-serverless-ui-dashboard
-        image: registry.cn-shanghai.aliyuncs.com/akasakaisami/serverless_tt_frontend
+        # image: registry.cn-shanghai.aliyuncs.com/akasakaisami/serverless_tt_frontend
+        image: diomwu/serverless_tt_frontend:nginx-update
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
